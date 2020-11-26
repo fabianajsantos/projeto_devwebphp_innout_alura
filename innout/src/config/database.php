@@ -15,4 +15,15 @@ class Database{
 
         return $conn;
     }
+
+    //outro metodo estatico para retornar do bd
+    public static function getResultFromQuery($sql){
+
+        $conn = self::getConnection();
+        $result = $conn->query($sql);
+        $conn->close();
+        return $result;
+
+
+    }
 }
