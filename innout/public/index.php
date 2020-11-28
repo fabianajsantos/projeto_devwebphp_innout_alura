@@ -22,8 +22,16 @@ echo '<br>';
 
 
 //testando importacao da classe model
-$user = new User(['name'=>'Lucas']);
-print_r($user);
-echo('fim');
+                //$user = new User(['name' => 'Lucas', 'email' => 'lucas@gmail.com']); 
+                //echo $user->getSelect();
+                //pode ser substituído por:
+                echo  User::getSelect(['id' => 1], 'name, email');
+                //echo  User::getSelect(['name' => 'Chaves'], 'name, email');
+                echo '<br>';
+                echo  User::getSelect(['name' => 'Chaves', 'email '=> 'chaves@gmail.com']); //criterios usados como filtro para o select do model
+                
+                //$user->set('email', 'lucasalterado@gmail.com');
+//print_r($user->get('email')); nao funcionou :(//
+//print_r($user);
 
 
